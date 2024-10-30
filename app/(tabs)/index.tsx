@@ -1,10 +1,10 @@
-import { StyleSheet, ScrollView } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { StyleSheet, ScrollView, FlatList } from "react-native";
 // Components
 import { Text, View, SafeAreaView } from "@/components/Themed";
 import HomeHeader from "@/components/molecules/HomeHeader";
 import SearchBar from "@/components/molecules/SearchBar";
 import CategoryPill from "@/components/atoms/CategoryPill";
+import EventCard from "@/components/molecules/EventCard";
 
 const categories = [
   { id: 0, name: "💼 Emprendimiento" },
@@ -17,16 +17,22 @@ const categories = [
 export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
-      <HomeHeader />
-      <SearchBar />
-      <View style={styles.contentBody}>
-        <Text style={styles.subTitle}>Categorías</Text>
-        <ScrollView style={styles.carousel} horizontal>
-          {categories.map((category) => (
-            <CategoryPill key={category.id} title={category.name} />
-          ))}
-        </ScrollView>
-      </View>
+      <ScrollView>
+        <HomeHeader />
+        <SearchBar />
+        <View style={styles.contentBody}>
+          <Text style={styles.subTitle}>Categorías</Text>
+          <ScrollView style={styles.carousel} horizontal>
+            {categories.map((category) => (
+              <CategoryPill key={category.id} title={category.name} />
+            ))}
+          </ScrollView>
+          <View style={styles.eventSection}>
+            <EventCard />
+            <EventCard />
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -46,5 +52,10 @@ const styles = StyleSheet.create({
   },
   carousel: {
     marginVertical: 10,
+  },
+  eventSection: {
+    marginVertical: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
