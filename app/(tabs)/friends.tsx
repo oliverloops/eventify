@@ -1,12 +1,17 @@
 import { StyleSheet } from "react-native";
 // Components
 import { Text, View, SafeAreaView } from "@/components/Themed";
+import FriendsEvent from "@/components/molecules/FriendsEvent";
 
 export default function Friends() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Amigos</Text>
+      </View>
+      <View style={{ marginVertical: 10 }}>
+        <FriendsEvent />
+        <FriendsEvent />
       </View>
     </SafeAreaView>
   );
