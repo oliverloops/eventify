@@ -12,6 +12,7 @@ export default function Friends() {
       <View style={{ marginVertical: 10 }}>
         <FriendsEvent />
         <FriendsEvent />
+        <FriendsEvent />
       </View>
     </SafeAreaView>
   );

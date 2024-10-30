@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 // Components
 import { Text, View } from "@/components/Themed";
+import FriendsCircles from "@/components/atoms/FriendsCircles";
 
 export default function FriendsEvent() {
   return (
@@ -15,6 +16,7 @@ export default function FriendsEvent() {
           <Text style={styles.date}>Mier. 15:00 hrs</Text>
         </View>
         <View style={styles.friendSection}>
+          <FriendsCircles />
           <Text style={styles.friendsDetails}>a 3 amigos les interesa</Text>
         </View>
       </View>
@@ -25,7 +27,6 @@ export default function FriendsEvent() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     padding: 10,
     height: 82,
@@ -53,6 +54,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     backgroundColor: "transparent",
+    marginLeft: 8,
+    marginRight: 5,
   },
   title: {
     fontWeight: 500,
@@ -63,6 +66,7 @@ const styles = StyleSheet.create({
   friendSection: {
     flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "transparent",
   },
   friendsDetails: {
