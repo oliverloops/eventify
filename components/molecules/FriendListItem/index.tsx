@@ -32,6 +32,7 @@ export default function FriendListItem({
       <TouchableOpacity
         style={!isFriend ? styles.btnActive : styles.btnInactive}
         onPress={() => null}
+        disabled={isFriend}
       >
         {!isFriend ? (
           <AntDesign name="adduser" size={20} color="white" />
