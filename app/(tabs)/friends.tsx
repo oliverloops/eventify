@@ -1,23 +1,29 @@
 import { StyleSheet } from "react-native";
 // Components
-import { Text, View } from "@/components/Themed";
+import { Text, View, SafeAreaView } from "@/components/Themed";
 
 export default function Friends() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Friends</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Amigos</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    padding: "2.5%",
   },
-  text: {
-    color: "#fff",
-    fontSize: 16,
+  header: {
+    flexDirection: "row",
+    marginTop: 50,
+    padding: 10,
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 800,
   },
 });
