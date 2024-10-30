@@ -1,22 +1,37 @@
 import { StyleSheet } from "react-native";
-import { Text, View } from "@/components/Themed";
+// Components
+import { Text, View, SafeAreaView } from "@/components/Themed";
+import SearchBar from "@/components/molecules/SearchBar";
+import FriendListItem from "@/components/molecules/FriendListItem";
 
-export default function Directory() {
+export default function Friends() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Directory</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Directorio</Text>
+      </View>
+      <SearchBar placeholder="Buscar por nombre" />
+      <View style={{ marginVertical: 10, padding: "2.5%" }}>
+        <FriendListItem />
+        <FriendListItem />
+        <FriendListItem />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    padding: "2.5%",
   },
-  text: {
-    color: "#fff",
-    fontSize: 16,
+  header: {
+    flexDirection: "row",
+    marginTop: 50,
+    padding: 10,
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 800,
   },
 });

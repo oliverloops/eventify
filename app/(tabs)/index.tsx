@@ -19,7 +19,7 @@ export default function Index() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <HomeHeader />
-        <SearchBar />
+        <SearchBar placeholder="Buscar por nombre o categoría..." />
         <View style={styles.contentBody}>
           <Text style={styles.subTitle}>Categorías</Text>
           <ScrollView style={styles.carousel} horizontal>

@@ -3,13 +3,17 @@ import { Ionicons } from "@expo/vector-icons";
 // Components
 import { View } from "@/components/Themed";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  placeholder: string;
+}
+
+export default function SearchBar({ placeholder }: SearchBarProps) {
   return (
     <View style={styles.searchBar}>
       <Ionicons name="search" size={22} color="white" />
       <TextInput
         style={styles.textInput}
-        placeholder="Buscar por nombre o categoría..."
+        placeholder={placeholder}
         placeholderTextColor={"#767676"}
         multiline={false}
       />
