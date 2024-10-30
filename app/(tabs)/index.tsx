@@ -1,31 +1,50 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+// Components
+import { Text, View, SafeAreaView } from "@/components/Themed";
+import HomeHeader from "@/components/molecules/HomeHeader";
+import SearchBar from "@/components/molecules/SearchBar";
+import CategoryPill from "@/components/atoms/CategoryPill";
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+const categories = [
+  { id: 0, name: "💼 Emprendimiento" },
+  { id: 1, name: "🤝 Comunidad" },
+  { id: 2, name: "🎸 Música" },
+  { id: 3, name: "🎨 Arte" },
+  { id: 4, name: "🎭 Teatro" },
+];
 
-export default function TabOneScreen() {
+export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <HomeHeader />
+      <SearchBar />
+      <View style={styles.contentBody}>
+        <Text style={styles.subTitle}>Categorías</Text>
+        <ScrollView style={styles.carousel} horizontal>
+          {categories.map((category) => (
+            <CategoryPill key={category.id} title={category.name} />
+          ))}
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: "2.5%",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  contentBody: {
+    marginVertical: 10,
+    paddingHorizontal: "2%",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  subTitle: {
+    fontSize: 16,
+    fontWeight: 500,
+  },
+  carousel: {
+    marginVertical: 10,
   },
 });
