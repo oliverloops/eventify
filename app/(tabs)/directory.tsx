@@ -12,9 +12,9 @@ export default function Friends() {
       </View>
       <SearchBar placeholder="Buscar por nombre" />
       <View style={{ marginVertical: 10, padding: "2.5%" }}>
-        <FriendListItem />
-        <FriendListItem />
-        <FriendListItem />
+        <FriendListItem isFriend={false} />
+        <FriendListItem isFriend={true} />
+        <FriendListItem isFriend={false} />
       </View>
     </SafeAreaView>
   );
